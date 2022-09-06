@@ -5,7 +5,7 @@ import "./App.css";
 function App(): JSX.Element {
     return (
         <div className="App">
-            <header className="App-header">
+            <header className="App-header" style={{ backgroundColor: "blue" }}>
                 UD + Shreeya CISC275 with React Hooks and TypeScript
             </header>
             <Container>
