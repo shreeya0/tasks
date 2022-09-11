@@ -35,12 +35,12 @@ describe("Testing the array functions", () => {
     });
 
     test("Testing the bookEndList function", () => {
-        expect(bookEndList(NUMBERS_1)).toEqual([1, 3]);
-        expect(bookEndList(NUMBERS_2)).toEqual([100, 200]);
-        expect(bookEndList(NUMBERS_3)).toEqual([5, 5]);
-        expect(bookEndList(NUMBERS_4)).toEqual([]);
-        expect(bookEndList(NUMBERS_5)).toEqual([100, 3]);
-        expect(bookEndList(NUMBERS_6)).toEqual([-100, 200]);
+        expect(bookEndList({ numbers: NUMBERS_1 })).toEqual([1, 3]);
+        expect(bookEndList({ numbers: NUMBERS_2 })).toEqual([100, 200]);
+        expect(bookEndList({ numbers: NUMBERS_3 })).toEqual([5, 5]);
+        expect(bookEndList({ numbers: NUMBERS_4 })).toEqual([]);
+        expect(bookEndList({ numbers: NUMBERS_5 })).toEqual([100, 3]);
+        expect(bookEndList({ numbers: NUMBERS_6 })).toEqual([-100, 200]);
     });
 
     test("Testing the tripleNumbers function", () => {
