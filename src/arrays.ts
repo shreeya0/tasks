@@ -5,11 +5,12 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    let numarray: number[] = [];
     if (numbers.length === 0) {
-        return numarray;
+        return [];
     } else if (numbers.length === 1) {
-        numarray = [...numbers, ...numbers];
+        return [numbers[0], numbers[0]];
+    } else {
+        return [numbers[0], numbers[numbers.length - 1]];
     }
 }
 
@@ -53,7 +54,10 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    const words = messages.filter((s: string): boolean => !s.endsWith("?"));
+    return words.map((s: string): string =>
+        s.endsWith("!") ? s.toUpperCase() : s
+    );
 };
 
 /**
@@ -107,5 +111,6 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
+    const sum = values.reduce((total: number, num: number) => total + num, 0);
     return [];
 }
