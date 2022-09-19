@@ -5,13 +5,9 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    if (numbers.length === 0) {
-        return [];
-    } else if (numbers.length === 1) {
-        return [numbers[0], numbers[0]];
-    } else {
-        return [numbers[0], numbers[numbers.length - 1]];
-    }
+    return numbers.length === 0
+        ? []
+        : [numbers[0], numbers[numbers.length - 1]];
 }
 
 /**
@@ -111,6 +107,20 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    const sum = values.reduce((total: number, num: number) => total + num, 0);
-    return [];
+    const newArray = values;
+    const firstNeg = values.findIndex((nums: number): boolean => nums < 0);
+    if (firstNeg === -1) {
+        const sum = newArray.reduce(
+            (total: number, num: number) => total + num,
+            0
+        );
+        return newArray.splice(newArray.length, 0, sum);
+    } else {
+        const negArray = newArray;
+        const sum = negArray.reduce(
+            (total: number, num: number) => total + num,
+            0
+        );
+        return newArray.splice(firstNeg, 0, sum);
+    }
 }
