@@ -107,20 +107,22 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    const newArray = values;
+    const newArray = [...values];
     const firstNeg = values.findIndex((nums: number): boolean => nums < 0);
+    const negative = newArray.indexOf(firstNeg);
+    const index = firstNeg + 1;
     if (firstNeg === -1) {
         const sum = newArray.reduce(
-            (total: number, num: number) => total + num,
+            (currentTotal: number, num: number) => currentTotal + num,
             0
         );
-        return newArray.splice(newArray.length, 0, sum);
+        newArray.splice(newArray.length, 0, sum);
+        return newArray;
     } else {
-        const negArray = newArray;
-        const sum = negArray.reduce(
-            (total: number, num: number) => total + num,
-            0
-        );
-        return newArray.splice(firstNeg, 0, sum);
+        const sum = newArray
+            .slice(0, firstNeg)
+            .reduce((total: number, num: number) => total + num, 0);
+        newArray.splice(index, 0, sum);
+        return newArray;
     }
 }
