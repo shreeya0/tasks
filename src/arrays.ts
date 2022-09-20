@@ -109,7 +109,6 @@ export function makeMath(addends: number[]): string {
 export function injectPositive(values: number[]): number[] {
     const newArray = [...values];
     const firstNeg = values.findIndex((nums: number): boolean => nums < 0);
-    const negative = newArray.indexOf(firstNeg);
     const index = firstNeg + 1;
     if (firstNeg === -1) {
         const sum = newArray.reduce(
