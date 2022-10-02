@@ -3,7 +3,6 @@ import { Button } from "react-bootstrap";
 import { QuestionType } from "../interfaces/question";
 
 export function ChangeType(): JSX.Element {
-    type QuestionType = "multiple_choice_question" | "short_answer_question";
     const Question_Transitions: Record<QuestionType, QuestionType> = {
         multiple_choice_question: "short_answer_question",
         short_answer_question: "multiple_choice_question"
