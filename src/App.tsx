@@ -72,9 +72,6 @@ function App(): JSX.Element {
                 </Container>
             </div>
             <hr></hr>
-<<<<<<< HEAD
-            <DoubleHalf></DoubleHalf>
-=======
             <CheckAnswer expectedAnswer="42"></CheckAnswer>
             <hr></hr>
             <GiveAttempts></GiveAttempts>
@@ -89,7 +86,6 @@ function App(): JSX.Element {
             ></MultipleChoiceQuestion>
             <hr></hr>
             {/* <DoubleHalf></DoubleHalf> */}
->>>>>>> upstream/task-forms
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
